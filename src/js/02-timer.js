@@ -24,8 +24,7 @@ const options = {
     selectedDates[0] <= options.defaultDate
       ? (Notiflix.Notify.failure('Please choose a date in the future!'),
         (refs.btnStart.disabled = true))
-      : (Notiflix.Notify.success('The countdown has started!'),
-        (refs.btnStart.disabled = false));
+      : (refs.btnStart.disabled = false);
 
     userDate = selectedDates[0];
   },
@@ -67,6 +66,8 @@ const onStartTimer = () => {
     }
     setTimeToHTML();
   }, 1000);
+
+  Notiflix.Notify.success('The countdown has started!');
 };
 
 flatpickr(refs.dateForm, options);

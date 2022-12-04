@@ -20,7 +20,6 @@ const createPromise = (position, delay) => {
 const handleSubmit = e => {
   e.preventDefault();
   const formsEl = e.currentTarget.elements;
-  console.log('formsEl :', formsEl);
 
   const amount = Number(formsEl.amount.value);
   let delay = Number(formsEl.delay.value);
