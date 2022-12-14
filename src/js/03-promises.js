@@ -20,12 +20,12 @@ const createPromise = (position, delay) => {
 const handleSubmit = e => {
   e.preventDefault();
   const formsEl = e.currentTarget.elements;
-
   const amount = Number(formsEl.amount.value);
   let delay = Number(formsEl.delay.value);
   const step = Number(formsEl.step.value);
 
   for (let position = 1; position <= amount; position += 1) {
+    refs.form.reset();
     createPromise(position, delay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
